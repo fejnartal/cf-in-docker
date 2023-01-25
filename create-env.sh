@@ -67,10 +67,8 @@ pushd "/cf-deployment"
    -o "operations/scale-to-one-az.yml" \
    -o "operations/use-compiled-releases.yml" \
    -v system_domain="bosh-in-docker" \
-   --no-redact
+   --no-redact || true # prevent container from automatically terminating because of the error
 
-#  bosh -n --tty -d cf deployments
-#  bosh -n --tty -d cf vms
 popd
 
 while true; do sleep 30; done;
