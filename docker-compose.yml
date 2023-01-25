@@ -1,0 +1,8 @@
+version: '3.0'
+
+services:
+  bosh-in-docker:
+    privileged: true
+    build: { context: . }
+    volumes:
+    - ./shared-creds:/shared-creds
